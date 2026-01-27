@@ -1,0 +1,177 @@
+
+1. CSS Core Fundamentals
+  Syntax • Cascade • Specificity • Inheritance 
+  • initial vs inherit vs unset vs revert 
+  • !important • CSS Parsing 
+  • User Agent Styles
+
+2. CSS Values & Units (Complete)
+  Absolute: px
+  Relative: %, em, rem
+  Viewport: vw, vh, vmin, vmax, 
+  svw horizontal check
+  svh, vertical check
+  lvw horizontal
+  lvh, vertical
+  dvw, auto
+  dvh  auto
+  Grid/Layout: fr, cqw, cqh, cqi, cqb (Container Units)
+
+3. Selectors
+  Universal Selector 
+  Attribute Selector 
+  GroupSelector
+  Descendent Selector div p {} & ChildSelector div > p 
+  Compound Selector element.class 
+  Adjecent Selector  + 
+  Sibling Selector  ~
+
+13. Colors (MODERN)
+  color, background-color, currentColor, 
+  rgb()/rgba(), hsl()/hsla(),
+  color-scheme = Inherit a Chrome Dark/Light Background
+
+14. Backgrounds (FULL)
+  background (shorthand),
+   background-image, 
+  -size, -position, -repeat, -attachment, -clip, -origin, -blend-mode
+
+7. Display & Visibility
+  display (block, inline, inline-block, 
+  flex, grid, flow-root, contents, inline-grid), 
+  visibility, opacity
+
+5 Box Properties.
+  Padding , Margin , Border,BorderRadius
+  Width, Height, MinWidthHeight, MaxWidthHeight
+  Display Properties
+  Box Shadows
+  Working With Overflow
+
+8. Positioning (FULL)
+  position, top/right/bottom/left, 
+  inset, z-index
+
+4. quesdo Classes
+
+    Used mostly with links and interactive elements.
+      :link — unvisited links
+      :visited — visited links
+      :hover — mouse is over the element
+      :active — element is being clicked
+      :focus — element has keyboard/mouse focus
+      :target — element targeted by a URL fragment (#id)
+
+    📝 Form & Input States
+    Mainly for form controls and validation.
+      :checked — checked inputs (checkbox, radio)
+      :disabled — disabled elements
+      :enabled — enabled elements
+      :required — required inputs
+      :optional — optional inputs
+      :valid — input passes validation
+      :invalid — input fails validation
+
+    🌳 Structural (Tree-Based) Selectors
+      Based on the element’s position in the DOM.
+      :root — the root element (<html>)
+      :empty — elements with no children
+      :first-child
+      :last-child
+      :nth-child(n)
+      :nth-last-child(n)
+      :only-child
+
+    🧩 Type-Based Structural Selectors
+    Like structural selectors, but scoped to element type.
+      :first-of-type
+      :last-of-type
+      :nth-of-type(n)
+      :only-of-type
+
+    🧠 Logical / Functional Pseudo-Classes
+
+    Used for advanced selector logic and grouping.
+      :not(selector) — excludes elements
+      :is(selector) — matches any selector in the list
+      :where(selector) — same as :is() but with zero specificity
+
+4. Pseudo Elements (FULL)
+  ::before, ::after, ::first-letter,
+  ::first-line, ::selection,
+  ::marker, ::placeholder, ::file-selector-button,
+  ::backdrop, ::cue
+
+
+9. Flexbox (ALL)
+  display: flex, flex-direction, flex-wrap,
+  flex-flow, justify-content, align-items, 
+  align-content, gap, row-gap, column-gap, 
+  flex-grow, flex-shrink, flex-basis, 
+  flex, order, align-self
+
+✅ 10. GRID LAYOUT (COMPLETE + CORRECTED)
+  Container Properties
+  display: grid | inline-grid
+  grid-template-columns, grid-template-rows, grid-template-areas, grid-template (shorthand)
+  grid-auto-columns, grid-auto-rows, grid-auto-flow
+  grid (master shorthand: template + auto tracks + flow)
+  gap, row-gap, column-gap
+  justify-items, align-items, place-items (shorthand)
+  justify-content, align-content, place-content (shorthand)
+  Item Properties
+  grid-column-start, grid-column-end, grid-column (shorthand)
+  grid-row-start, grid-row-end, grid-row (shorthand)
+  grid-area (shorthand for row/column start/end OR area name assignment)
+  justify-self, align-self, place-self (shorthand)
+  Advanced
+  subgrid (value for grid-template-columns/rows in nested grids)
+  grid-template string syntax (ASCII art areas)
+  Implicit vs. explicit grid tracking
+
+11. Overflow & Scroll
+  overflow (-x/-y/-inline/-block), 
+  overflow: clip, scroll-behavior, 
+  overscroll-behavior, scrollbar-gutter, scroll-snap-*
+
+12. Typography (COMPLETE)
+  font (shorthand), font-family, font-size (-adjust),
+  font-weight, font-style, font-stretch, font-variant,
+  line-height, letter-spacing, word-spacing, text-align,
+  text-transform, text-decoration (-color/-style/-thickness),
+  text-wrap, white-space, hyphens, text-overflow
+
+
+
+15. Borders & Outline
+  border (shorthand), -width, -style, -color, -radius, -image, outline, outline-offset
+
+16. Effects & Filters
+  box-shadow, text-shadow, filter, backdrop-filter, mix-blend-mode, isolation
+
+17. Transform, Transition, Animation
+  Transform: transform, translate/scale/rotate/skew, transform-origin, perspective
+  Transition: transition (shorthand), -property, -duration, -timing-function, -delay
+  Animation: animation (shorthand), @keyframes, -name, -duration, -iteration-count, -direction, -fill-mode, -play-state
+
+18. Forms & UI
+  appearance, accent-color, caret-color, 
+  resize, cursor, pointer-events, 
+  user-select, touch-action
+
+19. CSS Variables
+  Custom Properties (--var), var(), 
+  fallbacks, scoping, theme switching
+
+20. Media & Container Queries
+  @media, @container, Container Units (cqw, cqh, cqi, cqb),
+  prefers-color-scheme, prefers-reduced-motion
+
+21. Modern CSS Architecture
+  Cascade Layers (@layer), CSS Nesting (&), 
+  View Transitions API, Anchor Positioning (position: anchor), 
+  Scoped Styles (@scope), Utility CSS, Design Tokens
+
+22. Performance & Best Practices
+  will-change, avoid forced reflow/layout thrashing, 
+  GPU-accelerated transforms, minimize CLS (Cumulative Layout Shift), efficient animations, containment (contain)
