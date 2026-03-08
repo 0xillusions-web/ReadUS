@@ -143,8 +143,8 @@
             motion-path
 
 18. Forms & UI
-  appearance, accent-color, caret-color, 
-  resize, cursor, pointer-events, 
+  appearance, caret-color=input | bar, 
+   cursor, pointer-events, 
   user-select, touch-action
   popover
   ::view-transition
@@ -191,22 +191,20 @@
 
 🧩 5. Advanced Layout & Containment
   aspect-ratio
-  content-visibility
-  contain
-  contain-intrinsic-size
+  content-visibility = andar sirf content ko hide karta hai
   object-fit
   object-position
-  overflow-clip-margin
   scrollbar-width
   scrollbar-color
 
 🖼 4. Advanced Background & Masking
-  mask
-  mask-image
+  
+  mask-image=only black-color ko image ke saath fill karta hai
   mask-size
   mask-repeat
   mask-position
-  clip-path
+  mask-origin,mask-clip
+  clip-path = shapes deta container ko 
   shape-outside
   shape-margin
 
@@ -245,6 +243,9 @@
   prefers-color-scheme, prefers-reduced-motion
 
 21. Modern CSS Architecture
+
+  @layer @container @media @supports 
+
   Cascade Layers (@layer), CSS Nesting (&),@supports 
   View Transitions API, Anchor Positioning (position: anchor), 
   Scoped Styles (@scope), Utility CSS, Design Tokens
