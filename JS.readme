@@ -1,0 +1,117 @@
+
+** UseStrict.
+-- Same function(a,a) Error.
+-- Define Always With ( var let const )
+-- Dublicate Keys in Object.
+-- Can`t Delete Read Object. { configurble : false}
+-- {this} is undefined.
+
+** Variables.
+--	(Var Const Let)
+
+** Datatypes.
+-- undefined string number boolean symbol null object
+
+** Type Conversations.
+		Datatype 	- 	String 		 		Number  			 boolean
+		----------------------------------------------------------
+		null			-   null						0							false
+		---------------------------------------------------------
+		undefined	- 	undefined				NaN						false
+		---------------------------------------------------------
+		NaN				-		NaN							NaN						
+		---------------------------------------------------------
+		string		-		{string}				string/wise		string/wise
+		---------------------------------------------------------
+		number		- 	{number}				{number}			number/wise
+		---------------------------------------------------------
+		boolean		- 	{boolean}				{0 / 1}				boolean
+		---------------------------------------------------------
+		object 				Ret StringOB		NaN	return 		True
+		---------------------------------------------------------
+
+** Operators.
+-- ( + - / * ** %)
+
+** Conditional.
+-- if else else if switch
+-- ?:
+
+** Logical Operators.
+-- > < <= >= >== <== == === 
+
+** Comparison.
+-- ( && || ~ !! )
+
+** Loops 
+-- while & do-while & for 
+
+** Switch
+-- Switch(){}
+	Case True Hota Hai To Uske Niche Saare Case True Ho Jate Hai.
+
+** Functions
+-- FunctionExpression. Function Assign In Variable.
+-- function(){} = function declaration.
+-- arrow = ()=>{}; always take parent this.
+
+** Nullish.
+-- ?? = Ignores null & undefined;
+-- ?.	= if true access value or call value;
+
+
+** Objects.
+-- delete obj.property
+-- property in obj;
+-- object.__proto__ = can`t set primitive;
+
+-- StructuredClone = DeepCopy Obj;
+-- Object.assign = ShallowCopy.
+-- __proto__ = function.prototype;
+-- new keyword.
+	function(){
+		let this = {};
+		return this;
+		__proto__ = function.prototype.
+	}
+
+** Symbols
+-- keyFor = Symbol.keyFor(Symbol.for(id))
+-- Symbol.for(id) = id is a same symbol reference create.
+-- Symbol.description = access value
+-- System Symbols.
+-- [symbol.iterator].
+-- *[-.Asynciterator]
+-- [symbol.hasintance]
+-- [symbol.StringTag] = console.log(Object.prototype.toString.call(obj));
+-- [symbol.toPrimitive] toString(obj); +obj = number; obj + obj = optional
+
+
+** Number;
+
+-- 1_000_000
+-- 10_000
+-- toString(16) base 16 conversation
+-- toString(10) base 10 conversation
+-- toString(2) base 2 convert.
+-- toFixed(2) // 2.444 = 2.44; always round the value;
+-- isFinite(123) = true; NaN/Infinity = false;
+-- parseInt();
+-- min,max();
+
+	
+					Math.floor	Math.ceil	Math.round	Math.trunc
+------------------------------------------------------
+3.1		 			3	  			4	        3	                 3
+------------------------------------------------------
+3.5		 			3	  			4	        4	                   3
+------------------------------------------------------
+3.6		 			3	  			4	        4	                   3
+------------------------------------------------------
+-1.1		     -2	       -1	        -1	              -1
+------------------------------------------------------
+-1.5		     -2	       -1	        -1	              -1
+------------------------------------------------------
+-1.6		     -2	       -1	        -2	              -1
+------------------------------------------------------
+
