@@ -1,3 +1,8 @@
+<script type=module></script> // module = always defer 
+
+	sync 	= kidhar kiya odhar hi odhar se execution start.
+	async	= when its loads start execution.
+	defer = after html parsing.
 
 ** UseStrict.
 -- Same function(a,a) Error.
@@ -41,7 +46,7 @@
 -- > < <= >= >== <== == === 
 
 ** Comparison.
--- ( && || ~ !! )
+-- ( && || ~ )
 
 ** Loops 
 -- while & do-while & for 
@@ -58,22 +63,7 @@
 ** Nullish.
 -- ?? = Ignores null & undefined;
 -- ?.	= if true access value or call value;
-
-
-** Objects.
--- delete obj.property
--- property in obj;
--- object.__proto__ = can`t set primitive;
-
--- StructuredClone = DeepCopy Obj;
--- Object.assign = ShallowCopy.
--- __proto__ = function.prototype;
--- new keyword.
-	function(){
-		let this = {};
-		return this;
-		__proto__ = function.prototype.
-	}
+-- !! = true or false batata hai.
 
 ** Symbols
 -- keyFor = Symbol.keyFor(Symbol.for(id))
@@ -115,3 +105,296 @@
 -1.6		     -2	       -1	        -2	              -1
 ------------------------------------------------------
 
+** Date && Time.
+
+	date.valueOf() // timestamp
+
+	** new Date() // always write in iso format (YYYY/MM/DDTHH:MM::SSZ+timezone)
+	-- new Date(timestamp);
+	-- new Date(isoformat);-- 
+	-- new Date(null) = epoch time.
+	-- new Date(undefined) = Invalid Time.
+	-- new Date(invalid string) = Invalid Time.
+
+
+	** Date.now();
+	-- `privacy.resistFingerprinting 
+			On = Ye On Hai To 100ms+ Hoga. 100ms+100ms+100ms
+			Off = 2ms + 2ms + 2ms 
+
+	** Date.parse(). // always parse only iso string. ( return timestamp )
+	-- Date.parse(invalid) = NaN. 
+
+	** Date.UTC() // always write in iso format
+	-- new Date(Date.UTC(0, 0, 0, 0, 0, 0));
+
+	*** Access Date&Time.
+
+		** getDate(); 1 - 31  || getUTC--
+		** getMonth(); 0 - 11 || getUTC--
+		** getFullyear(); return year || getUTC--
+		** getDay() // 0 - 6 || getUTC--
+		** getHours(); || getUTC--
+		** getMinutes(); || getUTC--
+		** getSeconds(); || getUTC--
+		** getMiliseconds(); || getUTC--
+
+		** getDate() // ES Chodke Sab -1 Return Karte Hai.
+		** getTimezoneOffset() // returns DayLightSavingTime Hours.
+
+
+	** Setter Time&Date. 0 starts with zero everything
+
+		() = return NaN. date = repalced with invalid-date
+		** setDate(date || -date) // date bada hota hai month calendar se to 
+												next month shift hota hai.
+		
+		** setFullYear(string);
+			your date = 15/08/2003
+			replace karta jaisa string ho = 15/{string}/2003
+
+		** setMonth(13) = shift next year feb 
+
+		** convert Localtime.
+		-- toString() // +5:30 in india 
+		-- toDateString() // shows only date
+		-- toISOString() // shows utc
+
+		
+		** locales = language-location.
+		-- en-US && en-IN
+
+		** Description.
+			const date = new Date(Date.now());
+			const options = {
+				year: "numeric",
+				month: "long",
+				day: "numeric",
+				weekday: "long",
+				hour: "numeric",
+				timeZone: "UTC"
+			}
+			console.log(
+				//date,
+				date.toLocaleDateString("en-US"), = no showes time
+				date.toLocaleString("en-IN") = showss time
+				date.toLocaleTimeString() = shows only time
+			);
+
+		** Intl.DateTimeFormat.
+			-- Intl.DateTimeFormat(locale,options).resolvedOptions() = {otpions} default values shows.
+			-- Like. = resolvedOptions().timeZone = Asia/culcutta.
+		
+			-- .format() = iso result.
+			-- .formatToParts = { month : month, date : date , day : day }
+			-- .Intl.relativeFormat().format(1,"day") 
+					in 1 day
+					-1 day ago 
+
+
+		** In Production Level Code.
+
+			Intl.DateTimeFormat(navigator.language,{
+				timezone : DateTimeFormat().resolvedOptions().timeZone. define nahi kiya auto lega system se 
+
+			})
+
+			best = "https://ipapi.co/json/. return everything with timezone 
+			always store utc datetime in database;
+
+
+
+** Objects.
+	
+	*** Static 
+
+		** Object.assign 
+			its shallow-copy.
+		
+			DeepCopy.
+			-- StructuredClone(object)
+		** Object.create
+			
+			Object.create(object,propertyobject {
+				name : {
+					writeable : false 
+					configurble : false
+				} // always object 
+				name: "string" type error 
+			}) && __proto__ = 1st argument of function.
+
+
+
+		** defineProperties(ob,description)
+		-- description = {
+				property_name : {
+					writeable : false 
+					value : default when not defined here 
+				}
+			}
+		** defineProperty(ob,property_name,descriptor)
+
+
+
+		** Object.entries = [ [key,value],[key,value]]
+		** fromEntries([[key,value]]) // object
+
+		** Object.seal = { ...property : false } // throws Typerror
+		** Objject.freeze = { writeale: false,configurble : false } + cantt add new properties.  // throws Typerror
+		** freeze(object);
+
+
+		** getOwnPropertyDescriptor(object,"property") = // {
+			writeable : false,
+			configurble : true
+		}
+		** getOwnPropertyDescriptors(obj) // nested property descriptors.
+		** getOwnPropertyNames()
+		** Object.getOwnPropertySymbols()
+		** Objectt.getProptotypeOf()
+
+
+
+		** Object.groupBy(iterable,function(){
+			return true ? "in-stock" : "not-in-stock"
+		})
+
+		** Object.hasOwn(object,property)
+		** Object.is()
+
+		** Object.isExtensible() // boolean. new properties add kar sakte hai ya nahi.
+		** Object.preventExtensible() // can`t add new properties.
+
+		** Object.keys && Object.values;
+
+		** Object.setPropotype && Object.getProptotypeOf
+
+** Array.
+
+	** Static.
+	-- from = Array.from(iterable,(value)=>x + x) = // new list 
+
+	** Instance
+		.length /
+		.of(property) // create array.
+		.concat. // concating two list.
+		.copyWithin << let shifting element check browser.	
+		.entries = // iterator.[ key value]
+		.every(function(value)=>!!value) // all value is true = // true 
+		.some(function(value)=>!!value) // any value is true = // true 	
+		.fill(value,start,end)	
+		.filter(function(value)=>!!value) // only true values return.
+		.find(function(value)=>!!value) // if one value true. // return with {true} value;	
+		.findIndex(function(value)=>!!value) // return indexvalue of list.
+		.lastIndex(function(value)=>!!value) // return with last true value;	
+		.flat() // [1,2,[3,4]] = [1,2,3,4]
+
+
+		*** flatmap
+		--- const arr = [1, 2, 1];
+		--- const result = arr.flatMap((num) => (num === 2 ? [2, 2] : 1));
+		--- console.log(result);
+		--- Expected output: Array [1, 2, 2, 1]
+
+	.forEach(element=> what you do ) // return undefined
+	.includes(value) // if value exist return //boolean
+	.join(string) // string with concat with string value;
+	.keys();
+	.map((value)=> value+2 ) // new list value;
+	.pop and array.push 
+	.reduce(startingvalue,currentvalue,addedvlaue); //
+	.reverse();
+	.shift() // remove start 1 element
+		if array is empty // undefined
+
+	.arra.unshift(value,value)
+	.arra.slice(from to)
+	.arra.sort(function()=>a - b) 
+	-- a - b = negative. place item first [a,b]
+
+	array.splice(startindex,howmuch delete,value)
+
+** Maps.
+	-- get set clear delete size keys entries values foreach.
+	keys values entries = return iterator.
+
+** Set.
+
+	inherit maps functions.
+	
+	console.log(set1.difference(set2)); // set1 me jo difference hai o do 
+	console.log(set1.intersection(set2)) // dono me jo same hai o do.
+
+	//console.log(set1.isDisjointFrom(set2)) // dono me koi element match nahi hai to {true}
+	console.log(set1.isSupersetOf(set2)) // set2 ke saare values set1 me hai to {true}
+	set1.isSubsetOf(set2) // set1 ke saare values set2 me hai ya nahi
+
+	console.log(set1.symmetricDifference(set2)) // dono set ke difference values return in set 
+	console.log(set1.union(set2))  // return concat set set1 & set2 
+
+** weakmap.
+
+	-- weakmap.delete.
+	-- .get 
+	-- getOrInsert.
+	-- getOrInsertComputed.
+	-- has 
+	-- set 
+
+
+** resting Parameter function(...Parameter = list);
+** Clouser
+** call apply bind 
+
+
+** --proto-- && prototype confusion clear 
+
+		** new = function(){
+			this = {}
+			return this;
+			this.--proto-- = this.setPropotypeOf(function.prototype);
+
+		}
+
+		** arrow fucntion__this.
+			always take lexical_envoirment.
+
+
+** Custom Errors.
+
+		try {
+			throw obj;
+		} catch(obj){ = same object hota hai jo throw kiya hai.
+
+		}
+
+** Classes
+
+		#private = cant access outside the class.
+		_protected = not offically announced.
+
+		class instanceof objects. checks --proto-- with nesteding.
+
+		static properties use with only Class.
+
+		Mixins = Object.assing(prototype,yourobject);
+
+** dynamic Import.
+	import();
+
+** Weakmap && WeakSet.
+
+** WeakRef and FinalizationRegistry.
+		const weakref = new WeakRef(object);
+
+		const registry = new FinalizationRegistry((object)=>{
+			console.log(`Object Collect GC`,object);
+		})
+		registry.register(object,"Cleanup Completed");
+		object = null;
+
+		object garbaje collect hote hi FinalizationRegistry(callback run karega)
+
+
+
+** Proxy = Advanced Control Of Object.
